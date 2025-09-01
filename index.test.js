@@ -30,4 +30,14 @@ describe('Time to words', () => {
     const timeInWords = convertTimeToWords('12:35');
     expect(timeInWords).toBe('twenty five to one');
   });
+
+  it('Handles times not 15 not 30 - 3:40', () => {
+    const timeInWords = convertTimeToWords('3:40');
+    expect(timeInWords).toBe('twenty to four');
+  });
+
+  it('Handles times not 15 not 30 - 3:20', () => {
+    const timeInWords = convertTimeToWords('3:20');
+    expect(timeInWords).toBe('twenty past three');
+  });
 });
